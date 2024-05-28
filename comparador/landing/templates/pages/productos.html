@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Productos.css' %}">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <!-- Barra de navegación-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-5">
+      <div class="container-fluid">
+
+        <!-- Logo -->
+        <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link" href="Landing.html">
+                <img id="logo" src="{% static 'img/logo2.png' %}" alt="Logo web">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Enlaces centrales -->
+        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="Landing.html">Inicio</a>
+            </li>
+            <li class="nav-item activo">
+              <a class="nav-link" href="Productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Supermercados.html">Supermercados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Mapa.html">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Landing.html">Carrito</a>
+          </li>
+          </ul>
+        </div>
+      
+        <!-- Perfil -->
+        <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="Login.html">Perfil</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+    <!-- Productos-->
+    <main>
+      <div class="container">
+        <div class="row mb-3 mx-auto text-center">
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card" style="width:300px">
+                  <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F1087454a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                  <div class="card-body">
+                  <h4 class="card-title">Bebida Energética Mango Loco, 473 ml</h4>
+                  <p class="card-text">1 Unidad</p><br>
+                  <p class="card-text">Lider:  $1.550</p>
+                  <p class="card-text">tottus: $1.790</p>
+                  <p class="card-text">Jumbo: $1.790</p>
+
+                  <!-- Modal -->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Agregar al Carrito
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Producto agregado
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://jumbo.vtexassets.com/arquivos/ids/447834-450-450?width=450&height=450&aspect=true" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Bebida Energética Monster Regular 473 ml</h4>
+                <p class="card-text">1 Unidad</p><br>
+                <p class="card-text">Lider: $1.550</p>
+                <p class="card-text">tottus: $1.790</p>
+                <p class="card-text">Jumbo: $1.790</p>
+
+                  <!-- Modal -->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Agregar al Carrito
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Producto agregado
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F1375096a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Bebida Energética Sabor Piña Ultra Gold, 473 ml</h4>
+                <p class="card-text">1 Unidad</p><br>
+                <p class="card-text">Lider:  $1.550</p>
+                <p class="card-text">tottus: $1.790</p>
+                <p class="card-text">Jumbo: $1.790</p>
+
+                  <!-- Modal -->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Agregar al Carrito
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Producto agregado
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3 mx-auto text-center">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F279665a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                    <div class="card-body">
+                    <h4 class="card-title">Nuggets Congelados de Pollo..., 1 kg</h4>
+                    <p class="card-text">1 Unidad</p><br>
+                    <p class="card-text">Lider:  $4.290</p>
+                    <p class="card-text">unimarc: $6.290</p>
+                    <p class="card-text">Jumbo: $5.990</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card" style="width:300px">
+                  <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F3923a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                  <div class="card-body">
+                  <h4 class="card-title">Bebida Original Botella Desechable, 3 L</h4>
+                  <p class="card-text">1 Unidad</p><br>
+                  <p class="card-text">Lider:  $2.890</p>
+                  <p class="card-text">unimarc: $2.390 (OFERTA!)</p>
+                  <p class="card-text">Jumbo: $3.090</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F4516016a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Café Liofilizado Descafeinado, 95 g</h4>
+                <p class="card-text">1 Unidad</p><br>
+                <p class="card-text">Lider:  $13.990</p>
+                <p class="card-text">unimarc: $19.550</p>
+                <p class="card-text">Jumbo: $16.690</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="row mb-3 mx-auto text-center">
+              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                  <div class="card" style="width:300px">
+                      <img class="card-img-top" src="img/heineken.jpg" alt="Card image">
+                      <div class="card-body">
+                      <h4 class="card-title">Heineken</h4>
+                      <p class="card-text">Pack 18 latas</p><br>
+                      <p class="card-text">Lider:  $11.990</p>
+                      <p class="card-text">tottus: $10.990</p>
+                      <p class="card-text">Jumbo: $11.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="img/Kuntsmann.jpg" alt="Card image">
+                    <div class="card-body">
+                    <h4 class="card-title">Kuntsmann</h4>
+                    <p class="card-text">Pack 12 latas</p><br>
+                    <p class="card-text">Lider:  $13.990</p>
+                    <p class="card-text">tottus: $14.990</p>
+                    <p class="card-text">Jumbo: $14.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card" style="width:300px">
+                  <img class="card-img-top" src="img/Stella.jpg" alt="Card image">
+                  <div class="card-body">
+                  <h4 class="card-title">Stella Artois</h4>
+                  <p class="card-text">Pack 12 latas</p><br>
+                  <p class="card-text">Lider:  $6.990</p>
+                  <p class="card-text">tottus: $7.990</p>
+                  <p class="card-text">Jumbo: $7.690</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="row mb-3 mx-auto text-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F1411445a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                        <div class="card-body">
+                        <h4 class="card-title">Galletas Frac chocolate 130g</h4>
+                        <p class="card-text">1 Unidad</p><br>
+                        <p class="card-text">Lider:  $690</p>
+                        <p class="card-text">tottus: $710</p>
+                        <p class="card-text">Jumbo: $749</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                  <div class="card" style="width:300px">
+                      <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F1002314a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                      <div class="card-body">
+                      <h4 class="card-title">Leche Natural Entera Lonco Leche, 1 L</h4>
+                      <p class="card-text">1 Unidad</p><br>
+                      <p class="card-text">Lider:  $1.050</p>
+                      <p class="card-text">tottus: $1.090</p>
+                      <p class="card-text">Jumbo: $1.079</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="card" style="width:300px">
+                    <img class="card-img-top" src="https://images.lider.cl/wmtcl?source=url%5Bfile%3A%2Fproductos%2F2437a.jpg%5D&scale=size%5B180x180%5D&sink=format%5Bwebp%5D" alt="Card image">
+                    <div class="card-body">
+                    <h4 class="card-title">SAzúcar blanca Iansa 1 Kg</h4>
+                    <p class="card-text">1 Unidad</p><br>
+                    <p class="card-text">Lider:  $1.490</p>
+                    <p class="card-text">tottus: $1.113 (OFERTA!)</p>
+                    <p class="card-text">Jumbo: $1.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>    
+              
+              <div class="row mb-3 mx-auto text-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="img/Austral.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h4 class="card-title">Austral Calafate</h4>
+                        <p class="card-text">Pack 12 botellas</p><br>
+                        <p class="card-text">Lider:  $12.990</p>
+                        <p class="card-text">tottus: $13.990</p>
+                        <p class="card-text">Jumbo: $13.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="img/Patagonia.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h4 class="card-title">Patagonia</h4>
+                        <p class="card-text">1 Lata</p><br>
+                        <p class="card-text">Lider:  $990</p>
+                        <p class="card-text">tottus: $1.990</p>
+                        <p class="card-text">Jumbo: $1.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="img/budweiser.jpg" alt="Card image">
+                        <div class="card-body">
+                        <h4 class="card-title">Budweiser</h4>
+                        <p class="card-text">Pack 6 latas</p><br>
+                        <p class="card-text">Lider:  $5.990</p>
+                        <p class="card-text">tottus: $6.990</p>
+                        <p class="card-text">Jumbo: $6.490</p>
+
+                      <!-- Modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al Carrito
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Producto agregado
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Pie de pagina 
+      <div class="container-fluid text-center bg-dark">
+        <div class="row">
+          <div class="col">
+          </div>
+
+          <div class="col">
+            <ul class="navbar-nav">
+
+              <li class="nav-item">
+                <a href="#">Contactenos</a>
+              </li>
+              <li class="nav-item">
+                <a href="#">Terminos y Condiciones</a>
+              </li>
+              <li class="nav-item">
+                <a href="#">Sobre Nosotros</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col">
+          </div>
+        </div>
+      </div>-->
+    </footer>
+    
+</body>
+</html>
+
+
+
+<!-- grande gonzalito-->
