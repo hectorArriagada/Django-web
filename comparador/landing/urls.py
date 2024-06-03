@@ -1,7 +1,12 @@
+#from django.conf.urls import url
 from django.urls import path
 from . import views
 
-""" path('nombreURL',funcionVista,nombreDePagina) """
 urlpatterns = [
-    path("", views.landing, name="landing"),
+    path('', views.landing, name='landing'),
+    path('productos', views.productos, name="productos"),
+    path('supermercados', views.supermercados, name="supermercados"),
+    path('mapa', views.mapa, name="mapa"),
+    path('login', views.login, name="login"),
+    path('registrar', views.registrar, name="registrar"),
 ]
