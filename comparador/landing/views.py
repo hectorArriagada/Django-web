@@ -26,6 +26,50 @@ def registrar(request):
     context = {}
     return render(request, 'pages/registrar.html', context)
 
+def user_del(request, pk):
+    try:
+        usuario = Usuario.objets.get(rut=pk)
+        usario.delete()
+
+        usuarios = Usuario.objects.all()
+        context = {
+            "mensaje": "Registro eliminado con exito"
+            "usuarios": usuarios
+        }
+
+        return render(request, 'pages/crud.html', context)
+
+    except:
+        usuarios = Usuario.objects.all()
+        context = {
+            "mensaje": "Error, Rut no encontrado..."
+            "usuarios": usuarios
+        }
+
+        return render(request, 'pages/user_del', context)
+
+
+def user_findEdit(request,pk):
+    if pk != "":
+        usuario = Usuario.objets.get(rut=pk)
+        generos = Genero.objets.all()
+        context = {
+            "usuario": usuario,
+            "generos": generos
+        }
+        
+        return render(request, 'pages/user_update.html', context)
+
+    else:
+        usuarios = Usuario.objets.all()
+        context = {
+            "mensaje": "Error, Rut no encontrado...",
+            "usuarios": usuarios,
+        }
+
+        return render(request, 'pages/user_update.html', context)
+
+
 def usuario_add(request):
     if request.method != 'POST':
         generos = Genero.objects.all()
