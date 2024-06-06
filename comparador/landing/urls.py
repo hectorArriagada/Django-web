@@ -9,4 +9,5 @@ urlpatterns = [
     path('mapa', views.mapa, name="mapa"),
     path('login', views.login, name="login"),
     path('registrar', views.registrar, name="registrar"),
-]
+    path('usuario_add', views.usuario_add, name='usuario_add'),
+    ]
