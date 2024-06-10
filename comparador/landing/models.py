@@ -7,6 +7,9 @@ class Genero(models.Model):
     id_genero = models.AutoField(db_column='idGenero', primary_key=True)
     genero = models.CharField(max_length=20, blank=False, null=False)
 
+    def __str__(self):
+        return str(self.genero)
+
 
 # modelo para el usuario
 class Usuario(models.Model):
@@ -20,6 +23,15 @@ class Usuario(models.Model):
     genero = models.ForeignKey('Genero', on_delete=models.CASCADE, db_column='idGenero')
     correo = models.EmailField(unique=True, max_length=100, blank=True, null=True)
     telefono = models.IntegerField()
+
+    def __str__(self):
+        return (
+            str(self.nombre)
+            + " "
+            + str(self.appaterno)
+            + " "
+            + str(self.apmaterno)
+        )
 
 
 # Modelo para el carrito

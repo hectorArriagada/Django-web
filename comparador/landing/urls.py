@@ -9,6 +9,8 @@ urlpatterns = [
     path('mapa', views.mapa, name="mapa"),
     path('login', views.login, name="login"),
     path('registrar', views.registrar, name="registrar"),
-    path('usuario_add', views.usuario_add, name='usuario_add'),
+    path('user_add', views.user_add, name='user_add'),
     path('user_del/<str:pk>', views.user_del, name='user_del'),
+    path('user_find/<str:pk>', views.user_find, name='user_find'),
+    #path('user_update', views.user_update, name='user_update'),
     ]
