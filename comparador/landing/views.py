@@ -29,12 +29,21 @@ def login(request):
     return render(request, 'pages/login.html', context)
 
 # Vista Registrar
-def registrar(request):
-    context = {}
-    return render(request, 'pages/registrar.html', context)
+#def registrar(request):
+    #context = {}
+    #return render(request, 'pages/registrar.html', context)
+
+# Vista crud
+def crud(request):
+    usuarios = Usuario.objects.all()
+    context = {
+        "usuarios": usuarios
+    }
+    return render(request, 'pages/crud.html', context)
+
 
 # Vista CRUD Agregar
-def user_add(request):
+def registrar(request):
     if request.method != 'POST':
         generos = Genero.objects.all()
         context = {
@@ -50,9 +59,11 @@ def user_add(request):
         clave = request.POST["clave"]
         fecnac = request.POST["fechanac"]
         edad = request.POST["edad"]
-        genero = request.POST["optGenero"]
+        genero = request.POST["genero"]
         correo = request.POST["correo"]
         telefono = request.POST["telefono"]
+
+        objGenero = Genero.objects.get(id_genero=genero)
 
         obj = Usuario.objects.create(
             rut=rut,
@@ -62,20 +73,21 @@ def user_add(request):
             clave=clave,
             fecnac=fecnac,
             edad=edad,
-            genero=genero,
+            genero=objGenero,
             correo=correo,
-            telefono=telefono
+            telefono=telefono,
         )
 
         obj.save()
-        context = {'mensaje': 'Datos guardados'}
+        context = {'mensaje': 'Datos guardados',
+        }
         return render(request, 'pages/registrar.html', context)
 
 
 # Vista CRUD Eliminar
 def user_del(request, pk):
     try:
-        usuario = Usuario.objets.get(rut=pk)
+        usuario = Usuario.objects.get(rut=pk)
         usuario.delete()
 
         usuarios = Usuario.objects.all()
@@ -93,14 +105,14 @@ def user_del(request, pk):
             "usuarios": usuarios
         }
 
-        return render(request, 'pages/user_del', context)
+        return render(request, 'pages/crud.html', context)
 
 
 # Vista CRUD Buscar
 def user_find(request,pk):
     if pk != "":
-        usuario = Usuario.objets.get(rut=pk)
-        generos = Genero.objets.all()
+        usuario = Usuario.objects.get(rut=pk)
+        generos = Genero.objects.all()
         context = {
             "usuario": usuario,
             "generos": generos
@@ -109,7 +121,7 @@ def user_find(request,pk):
         return render(request, 'pages/user_update.html', context)
 
     else:
-        usuarios = Usuario.objets.all()
+        usuarios = Usuario.objects.all()
         context = {
             "mensaje": "Error, Rut no encontrado...",
             "usuarios": usuarios,

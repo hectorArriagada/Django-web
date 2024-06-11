@@ -22,7 +22,8 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <form action="{% url 'registrar' %}" mehotd="POST" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+                <form action="{% url 'registrar' %}" method="POST" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+                    {% csrf_token %}
                     <div class="my-3">
                         <h4>Formulario de registro</h4>
                     </div>
@@ -82,32 +83,13 @@
                     </div>
     
                     <!-- Genero -->
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            <label for="">Seleccione su genero</label>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Masculino" name="optGenero"
-                                    id="optGenero1">
-                                <label class="form-check-label" for="optGenero1">
-                                    Masculino
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Femenino" name="optGenero"
-                                    id="optGenero2">
-                                <label class="form-check-label" for="optGenero2">
-                                    Femenino
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Otro" name="optGenero" id="optGenero3">
-                                <label class="form-check-label" for="optGenero3">
-                                    Otro
-                                </label>
-                            </div>
-                        </div>
+                    <div class="form-floating mb-3 w-25 mx-auto">
+                        <select class="form-select" name="genero" id="genero">
+                            {% for tmp in generos %}
+                                <option value="{{tmp.id_genero}}">{{tmp.genero}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="genero" class="form-label">Genero</label>
                     </div>
     
                     <!-- Correo -->
@@ -127,8 +109,10 @@
     
                     </div>                
                     <div class="w-50 mx-auto mb-3">
-                        <button type="submit" id="btn-registrar" class="btn btn-outline-primary">Registrar</button>
-                        <button type="button" id="btn-limpiar" class="btn btn-outline-success">Limpiar formulario</button>
+                        <button type="submit" id="btn-registrar" class="btn btn-success">Registrar</button>
+                        <a href=" {% url 'crud' %}">
+                            <button type="button" id="btn-limpiar" class="btn btn-outline-success">Volver</button>
+                        </a>
                     </div>
     
     
@@ -139,8 +123,9 @@
     
       </main>
 
-
-      <script src="{% static 'js/Registrar.js'%}"></script>
+    <!-- CDN JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/Registrar.js'%}"></script>
     
 </body>
 </html>
