@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar</title>
+    <title>Registrar</title>
 
     <!-- CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
@@ -22,21 +22,22 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <form action="" mehotd="POST" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+                <form action="{% url 'user_update' %}" method="POST" id="formulario" class="col-6 text-center mx-auto shadow-lg mt-5">
+                    {% csrf_token %}
                     <div class="my-3">
-                        <h4>Formulario de registro</h4>
+                        <h4>Formulario de modificación</h4>
                     </div>
     
                     <!-- Rut -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="text"  class="form-control" id="rut" name="rut" placeholder="Ingrese su rut"
+                        <input type="text" value={{usuario.rut}} class="form-control" id="rut" name="rut" placeholder="Ingrese su rut"
                             required>
                         <label for="rut">Rut</label>
                     </div>
     
                     <!-- Nombre -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
+                        <input type="text" value={{usuario.nombre}} class="form-control" id="nombre" name="nombre" placeholder="Nombre"
                             required>
                         <label for="nombre">Nombre</label>
                     </div>
@@ -45,7 +46,7 @@
                     <div class="row mx-auto">
                         <div class="col mb-3">
                             <div class="form-floating w-50 ms-auto">
-                                <input type="text" class="form-control" id="appaterno" name="appaterno"
+                                <input type="text" value={{usuario.appaterno}} class="form-control" id="appaterno" name="appaterno"
                                     placeholder="Apellido paterno" required>
                                 <label for="appaterno">Apellido paterno</label>
                             </div>
@@ -54,7 +55,7 @@
                         <!-- Apellido Materno -->
                         <div class="col mb-3">
                             <div class="form-floating w-50">
-                                <input type="text" class="form-control" id="apmaterno" name="apmaterno"
+                                <input type="text" value={{usuario.apmaterno}} class="form-control" id="apmaterno" name="apmaterno"
                                     placeholder="Apellido materno" required>
                                 <label for="apmaterno">Apellido materno</label>
                             </div>
@@ -63,62 +64,47 @@
     
                     <!-- Contraseña -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                      <input type="text" class="form-control" id="clave" name="clave" placeholder="Contraseña"
+                      <input type="text" value={{usuario.clave}} class="form-control" id="clave" name="clave" placeholder="Contraseña"
                           required>
                       <label for="clave">Contraseña</label>
                     </div>
     
                     <!-- Fecha de nacimiento -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="date" class="form-control" id="fechanac" name="fechanac"
+                        <input type="date" value={{usuario.fecnac}} class="form-control" id="fechanac" name="fechanac"
                             placeholder="Fecha de Nacimiento" required>
                         <label for="fechanac">Fecha de Nacimiento</label>
                     </div>
     
                     <!-- Edad -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad" required>
+                        <input type="number" value={{usuario.edad}} class="form-control" id="edad" name="edad" placeholder="Edad" required>
                         <label for="edad">Edad</label>
                     </div>
     
                     <!-- Genero -->
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            <label for="">Seleccione su genero</label>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Masculino" name="optGenero"
-                                    id="optGenero1">
-                                <label class="form-check-label" for="optGenero1">
-                                    Masculino
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Femenino" name="optGenero"
-                                    id="optGenero2">
-                                <label class="form-check-label" for="optGenero2">
-                                    Femenino
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" value="Otro" name="optGenero" id="optGenero3">
-                                <label class="form-check-label" for="optGenero3">
-                                    Otro
-                                </label>
-                            </div>
-                        </div>
+                    <div class="form-floating mb-3 w-25 mx-auto">
+                        <select class="form-select" name="genero" id="genero">
+                            {% for tmp in generos %}
+                                {% if tmp.genero == usuario.id_genero.genero%}
+                                <option value="{{tmp.id_genero}}" selected>{{tmp.genero}}</option>
+                                {% else %}
+                                <option value="{{tmp.id_genero}}">{{tmp.genero}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label for="genero" class="form-label">Genero</label>
                     </div>
     
                     <!-- Correo -->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" required>
+                        <input type="email" value={{usuario.correo}} class="form-control" id="correo" name="correo" placeholder="Correo" required>
                         <label for="correo">Correo</label>
                     </div>
     
                     <!-- Telefono-->
                     <div class="form-floating w-50 mx-auto mb-3">
-                        <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono"
+                        <input type="number" value={{usuario.telefono}} class="form-control" id="telefono" name="telefono" placeholder="Telefono"
                             required>
                         <label for="telefono">Telefono</label>
                     </div>
@@ -127,8 +113,10 @@
     
                     </div>                
                     <div class="w-50 mx-auto mb-3">
-                        <button type="button" id="btn-registrar" class="btn btn-outline-primary">Registrar</button>
-                        <button type="button" id="btn-limpiar" class="btn btn-outline-success">Limpiar formulario</button>
+                        <button type="submit" id="btn-registrar" class="btn btn-success">Registrar</button>
+                        <a href=" {% url 'crud' %}">
+                            <button type="button" id="btn-limpiar" class="btn btn-outline-success">Volver</button>
+                        </a>
                     </div>
     
     
@@ -139,8 +127,9 @@
     
       </main>
 
-
-      <script src="{% static 'js/Registrar.js'%}"></script>
+    <!-- CDN JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/Registrar.js'%}"></script>
     
 </body>
 </html>

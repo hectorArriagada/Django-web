@@ -36,7 +36,7 @@
                                 <td>{{tmp.rut}}</td>
                                 <td>{{tmp.nombre}}</td>
                                 <td>{{tmp.appaterno}}</td>
-                                <td><a href="#"><button class=" btn btn-warning">Modificar</button></a></td>
+                                <td><a href="{% url 'user_update' %}"><button class=" btn btn-warning">Modificar</button></a></td>
                                 <td><a href=" {% url 'user_del' pk=tmp.rut %}"><button class=" btn btn-danger">Eliminar</button></a></td>    
                             </tr>
                             {% endfor %}

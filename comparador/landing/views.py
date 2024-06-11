@@ -3,6 +3,9 @@ from .models import Genero, Usuario, Carrito
 
 # Create your views here.
 
+# Vistas Principales
+##############################################################
+
 # Vista Principal
 def landing(request):
     context = {}
@@ -28,10 +31,19 @@ def login(request):
     context = {}
     return render(request, 'pages/login.html', context)
 
-# Vista Registrar
-#def registrar(request):
-    #context = {}
-    #return render(request, 'pages/registrar.html', context)
+
+##############################################################
+
+#prueba de usuario en el header
+def header(request, nombre):
+    usuario = Usuario.objects.get(nombre)
+    context {
+        "usuario": usuario
+    }
+
+
+# CRUD Usuarios
+##############################################################
 
 # Vista crud
 def crud(request):
@@ -115,7 +127,7 @@ def user_find(request,pk):
         generos = Genero.objects.all()
         context = {
             "usuario": usuario,
-            "generos": generos
+            "generos": generos,
         }
         
         return render(request, 'pages/user_update.html', context)
@@ -127,9 +139,66 @@ def user_find(request,pk):
             "usuarios": usuarios,
         }
 
-        return render(request, 'pages/user_update.html', context)
+        return render(request, 'pages/crud.html', context)
 
 
 # Vista CRUD Actualizar
+def user_update(request):
+    if request.method !="POST":
+        rut = request.POST["rut"]
+        nombre = request.POST["nombre"]
+        appaterno = request.POST["appaterno"]
+        apmaterno = request.POST["apmaterno"]
+        clave = request.POST["clave"]
+        fecnac = request.POST["fechanac"]
+        edad = request.POST["edad"]
+        genero = request.POST["genero"]
+        correo = request.POST["correo"]
+        telefono = request.POST["telefono"]
+
+        objGenero = Genero.objects.get(id_genero=genero)
+
+        obj = Usuario(
+            rut=rut,
+            nombre=nombre,
+            appaterno=appaterno,
+            apmaterno=apmaterno,
+            clave=clave,
+            fecnac=fecnac,
+            edad=edad,
+            genero=objGenero,
+            correo=correo,
+            telefono=telefono,
+        )
+
+        obj.save()
+
+        generos = Genero.objects.all()
+        context = {
+            "mensaje": "Modificado con exito",
+            "generos": generos,
+            "usuario": obj,
+        }
+        
+        return render(request, "pages/user_update.html", context)
+    
+
+##############################################################
 
 
+
+# CRUD Carrito
+##############################################################
+
+# Vista CRUD
+
+# Vista CRUD agregar
+
+# Vista CRUD eliminar
+
+# Vista CRUD buscar
+
+# Vista CRUD modificar
+
+
+##############################################################
