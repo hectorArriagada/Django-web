@@ -55,7 +55,7 @@ ROOT_URLCONF = 'comparador.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates/pages",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +67,11 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "crud"
+LOGOUT_REDIRECT_URL = "landing"
+
 
 WSGI_APPLICATION = 'comparador.wsgi.application'
 

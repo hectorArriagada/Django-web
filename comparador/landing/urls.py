@@ -13,4 +13,6 @@ urlpatterns = [
     path('user_find/<str:pk>', views.user_find, name='user_find'),
     path('user_update', views.user_update, name='user_update'),
     path('crud', views.crud, name='crud'),
+    path('login', views.conectar, name='conectar'),
+    path('logout', views.desconectar, name='logout'),
     ]

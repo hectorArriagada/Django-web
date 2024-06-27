@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Genero, Usuario, Carrito
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -37,8 +39,8 @@ def login(request):
 #prueba de usuario en el header
 def header(request, nombre):
     usuario = Usuario.objects.get(nombre)
-    context {
-        "usuario": usuario
+    context = {
+        "usuario": usuario,
     }
 
 
@@ -202,3 +204,44 @@ def user_update(request):
 
 
 ##############################################################
+
+
+
+# Sesiones
+##############################################################
+
+# Vista para conectar
+def conectar(request):
+    if request.method == "POST":
+        username = request.POST["correo"]
+        password = request.POST["clave"]
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            usuarios = Usuario.objects.all()
+            context = {
+                "usuarios": usuarios,
+            }
+            return render(request, "pages/landing.html", context)
+        
+        else:
+            context = {
+                "mensaje": "Usuario o contraseña incorrecta",
+                "design": "alert alert-danger w-50 mx-auto text-center", 
+            }
+            return render(request, "pages/login.html")
+    
+    else:
+        context = {}
+        return render(request, 'pages/login.html', context)
+    
+
+# Vista para desconectar
+def desconectar(request):
+    logout(request)
+    context = {
+        "mensaje": "Sesion cerrada",
+        "design": "alert alert-info w-50 mx-auto text-center"
+    }
+    return render(request, 'pages/login.html', context)

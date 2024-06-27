@@ -57,8 +57,20 @@
           <!-- Perfil -->
           <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
             <ul class="navbar-nav justify-content-center">
-              <li class="nav-item">
-                  <a class="nav-link" href={% url "login" %}>Perfil</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link" href={% url "login" %}>
+                    {% if request.user.is_authenticated %}
+                      Bienvenido {{ request.user.username }}
+                      <a href={% url "logout" %}>
+                        <button class="btn btn-danger my-3">
+                          Salir
+                        </button>
+                      </a>
+                    {% else %}
+                      Ingresar
+                    {% endif %}
+
+                  </a>
               </li>
             </ul>
           </div>

@@ -28,10 +28,11 @@
           <h2 class="text-center">Ingrese sus datos</h2>
     
           <!-- Inicio formulario -->
-          <form action="" method="POST" class="mb-5 w-50 mx-auto">
-    
+          <form action="{% url 'conectar' %}" method="POST" class="mb-5 w-50 mx-auto">
+            {% csrf_token %}
+
             <!-- Campo usuario -->
-            <div class="form-floating mb-3 mt-3 w-50">
+            <div class="form-floating mb-3 mt-3 w-50 text-center">
               <input type="email" class="form-control" id="username" placeholder="Ingrese email" name="username">
               <label for="username" id="username" name="username">Email:</label>
             </div>
