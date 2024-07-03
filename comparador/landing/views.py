@@ -31,17 +31,12 @@ def mapa(request):
 # Vista Login
 def login(request):
     context = {}
-    return render(request, 'pages/login.html', context)
+    return render(request, 'registration/login.html', context)
 
 
 ##############################################################
 
-#prueba de usuario en el header
-def header(request, nombre):
-    usuario = Usuario.objects.get(nombre)
-    context = {
-        "usuario": usuario,
-    }
+
 
 
 # CRUD Usuarios
@@ -213,8 +208,8 @@ def user_update(request):
 # Vista para conectar
 def conectar(request):
     if request.method == "POST":
-        username = request.POST["correo"]
-        password = request.POST["clave"]
+        username = request.POST["username"]
+        password = request.POST["pass"]
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
@@ -230,11 +225,11 @@ def conectar(request):
                 "mensaje": "Usuario o contraseña incorrecta",
                 "design": "alert alert-danger w-50 mx-auto text-center", 
             }
-            return render(request, "pages/login.html")
+            return render(request, "registration/login.html")
     
     else:
         context = {}
-        return render(request, 'pages/login.html', context)
+        return render(request, 'registration/login.html', context)
     
 
 # Vista para desconectar

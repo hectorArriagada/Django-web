@@ -31,7 +31,7 @@
           
 
           <!-- Enlaces centrales -->
-          <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+          <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
             <ul class="navbar-nav justify-content-center">
               <li class="nav-item activo">
                 <a class="nav-link" href={% url "landing" %}>Inicio</a>
@@ -55,12 +55,12 @@
       
         
           <!-- Perfil -->
-          <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">
+          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
             <ul class="navbar-nav justify-content-center">
               <li class="nav-item dropdown">
                   <a class="nav-link" href={% url "login" %}>
                     {% if request.user.is_authenticated %}
-                      Bienvenido {{ request.user.username }}
+                      {{ request.user.username }}
                       <a href={% url "logout" %}>
                         <button class="btn btn-danger my-3">
                           Salir

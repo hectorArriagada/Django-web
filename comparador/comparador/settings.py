@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_URL = "login"
+LOGIN_URL = "conectar"
 LOGIN_REDIRECT_URL = "crud"
 LOGOUT_REDIRECT_URL = "landing"
 
