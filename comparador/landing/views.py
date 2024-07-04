@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Genero, Usuario, Carrito
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -28,10 +29,6 @@ def mapa(request):
     context = {}
     return render(request, 'pages/mapa.html', context)
 
-# Vista Login
-def login(request):
-    context = {}
-    return render(request, 'registration/login.html', context)
 
 
 ##############################################################
@@ -208,16 +205,14 @@ def user_update(request):
 # Vista para conectar
 def conectar(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["username"]
         password = request.POST["pass"]
+        us = User.objects.get(email=email)
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, username=us.username, password=password)
         if user is not None:
             login(request, user)
-            usuarios = Usuario.objects.all()
-            context = {
-                "usuarios": usuarios,
-            }
+            print("conectado")
             return render(request, "pages/landing.html", context)
         
         else:
@@ -225,11 +220,11 @@ def conectar(request):
                 "mensaje": "Usuario o contraseña incorrecta",
                 "design": "alert alert-danger w-50 mx-auto text-center", 
             }
-            return render(request, "registration/login.html")
+            return render(request, "pages/login.html")
     
     else:
         context = {}
-        return render(request, 'registration/login.html', context)
+        return render(request, 'pages/login.html', context)
     
 
 # Vista para desconectar
