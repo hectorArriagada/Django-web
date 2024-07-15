@@ -40,6 +40,7 @@ def mapa(request):
 ##############################################################
 
 # Vista crud
+@login_required
 def crud(request):
     usuarios = Usuario.objects.all()
     context = {
